@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>计算器</title>
+</head>
+<script src="jquery-3.1.1.min.js"></script> 
+<script>
+$(function(){
+	var add = 0;
+	var rl = 0;
+	var result=$("#result").val();
+	function Do(){
+		rl=result.length;
+		if(rl<9){
+			if(result==0){
+				result=add;
+				$("#result").html(add);
+			}else{
+				result=result+add;
+				$("#result").html(result);
+			}
+		}else {
+			$("#result").html(result);
+			}
+		}
+	$("#ziro").click(function(){
+		add=$("#ziro").val();
+		Do();
+		})
+	$("#one").click(function(){
+		add=$("#one").val();
+		Do();
+		})
+	$("#two").click(function(){
+		add=$("#two").val();
+		Do();
+		})
+	$("#three").click(function(){
+		add=$("#three").val();
+		Do();
+		})
+	$("#four").click(function(){
+		add=$("#four").val();
+		Do();
+		})
+	$("#five").click(function(){
+		add=$("#five").val();
+		Do();
+		})
+	$("#six").click(function(){
+		add=$("#six").val();
+		Do();
+		})
+	$("#sev").click(function(){
+		add=$("#sev").val();
+		Do();
+		})
+	$("#eight").click(function(){
+		add=$("#eight").val();
+		Do();
+		})
+	$("#nin").click(function(){
+		add=$("#nin").val();
+		Do();
+		})
+	$("#switch").click(function(){
+		if($("#result").val().trim().substr(0,0)==="-"){
+			result=$("#result").val().trim().substr(1,$("#result").val().lenght-1)
+			}else
+		result="-"+result;
+		$("#result").html(result);
+		})
+})
+</script>
+<style>
+input{
+	border:none;
+	background-color:white;
+}
+table td,th{
+	border:solid 1px #ccc;
+	padding:10px;
+	}
+table{
+	border:solid 1px black;
+	}
+</style>
+<body>
+	<div style="padding-left:35%;padding-top:15%;">
+	<form>
+	<table>
+		<tr><th colspan="5" rowspan="2" height="30px">计算器</th></tr>
+		<tr></tr>
+		<tr><td colspan="5" height="30px" ><span id="result" style="float:right;" >0</span></td></tr>
+		<tr>
+			<td><input type="button" id="cancel" onclick="cancel()" value="←"/></td>
+			<td><input type="button" id="renew1" onclick="renew1()" value="CE"/></td>
+			<td><input type="button" id="renew2" onclick="renew2()" value="C"/></td>
+			<td><input type="button" id="switch" onclick="switch()" value="±"/></td>
+			<td><input type="button" id="squ" onclick="squ()" value="√"/></td>
+		</tr>
+		<tr>
+			<td><input type="button" id="sev" onclick="on()" value="7"/></td>
+			<td><input type="button" id="eight" onclick="on()" value="8"/></td>
+			<td><input type="button" id="nin"  onclick="on()" value="9"/></td>
+			<td><input type="button" id="divi" onclick="divi()" value="/"/></td>
+			<td><input type="button" id="bfh" onclick="bfh()" value="%"/></td>
+		</tr>
+		<tr>
+			<td><input type="button" id="four" onclick="on()" value="4"/></td>
+			<td><input type="button" id="five" onclick="on()" value="5"/></td>
+			<td><input type="button" id="six" onclick="on()" value="6"/></td>
+			<td><input type="button" id="mult" onclick="mult()" value="*"/></td>
+			<td><input type="button" id="daoshu" onclick="daoshu()" value="1/x"/></td>
+		</tr>
+		<tr>
+			<td><input type="button" id="one" onclick="on()" value="1"/></td>
+			<td><input type="button" id="two" onclick="on()" value="2"/></td>
+			<td><input type="button" id="three" onclick="on()" value="3"/></td>
+			<td><input type="button" id="min" onclick="min()" value="-"/></td>
+			<td rowspan="2"><input type="button" id="equle" onclick="()" value="="/></td>
+		</tr>
+		<tr>
+			<td colspan="2"><input type="button" id="ziro" onclick="on()" value="0"/></td>
+			<td><input type="button" id="point" onclick="point()" value="."/></td>
+			<td><input type="button" id="plus" onclick="plus()" value="+"/></td>
+		</tr>
+	</table>
+	</form>
+	</div>
+
+</body>
+</html>
