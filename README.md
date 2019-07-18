@@ -2,6 +2,9 @@
 
 > A Vue.js project
 
+网页demo预览跳转： https://all-of-me.github.io/vueDemo/dist/index.html
+计算器样式跳转： https://all-of-me.github.io/vueDemo/计算器.html
+
 ## Build Setup
 
 ``` bash
