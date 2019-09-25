@@ -18,7 +18,7 @@ export default {
     methods:{
         delItem(){
             const {comment,index,del} = this
-            if(window.confirm(`确定删除${comment.name}的评论吗？`)){
+            if(window.confirm('`确定删除${comment.name}的评论吗？`')){
                 del(index)
             }
         }
